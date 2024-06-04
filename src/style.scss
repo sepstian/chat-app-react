@@ -29,6 +29,9 @@
       flex-direction: column;
       gap: 10px;
       align-items: center;
+      @include mobile() {
+        width: 12rem;
+       }
   
       .logo {
         color: #648d5b;
@@ -50,7 +53,7 @@
         input {
           padding: 15px;
           border: none;
-          width: 250px;
+          width: 15rem;
           border-bottom: 1px solid #bcffa7;
           &::placeholder {
             color: rgb(175, 175, 175);
@@ -67,6 +70,7 @@
           padding: 10px;
           font-weight: bold;
           border: none;
+          width: 17rem;
           cursor: pointer;
         }
   
@@ -104,7 +108,7 @@
   
   .home {
     background-color: #bdffa7;
-    height: 97vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;

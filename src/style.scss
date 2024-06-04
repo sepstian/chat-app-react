@@ -91,6 +91,11 @@
     }
   }
 
+  .password-container{
+    display: flex;
+    align-items: center;
+  }
+
   .password-eye{
     position: relative;
     right: 25px;

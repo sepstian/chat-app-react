@@ -120,6 +120,7 @@
         flex: 1;
         background-color: #3c613d;
         position: relative;
+        overflow-y: scroll;
   
         .navbar {
           display: flex;
@@ -160,8 +161,8 @@
               border: none;
               cursor: pointer;
               @include tablet {
-                position: absolute;
-                bottom: 10px;
+                position: sticky;
+                bottom: 0px;
               }
             }
           }

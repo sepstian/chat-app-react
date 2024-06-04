@@ -35,7 +35,7 @@ const Chat = (props) => {
         </div>
       </div>
       <Messages />
-      <Input/>
+      <Input active={dataMsg.arrayMsg}/>
     </div>
   );
 };

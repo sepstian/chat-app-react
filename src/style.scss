@@ -408,6 +408,31 @@
             }
           }
         }
+
+        .inputNot {
+          height: 50px;
+          background-color: white;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+  
+          input {
+            display: none;
+          }
+  
+          .send {
+            display: none;
+  
+            img {
+              display: none;
+            }
+  
+            button {
+              display: none;
+            }
+          }
+        }
       }
     }
   }

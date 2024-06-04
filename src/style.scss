@@ -348,7 +348,8 @@
               gap: 10px;
   
               p {
-                background-color: rgb(219, 215, 215);
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(217, 253, 211);
                 padding: 10px 20px;
                 border-radius: 0px 10px 10px 10px;
                 max-width: max-content;
@@ -366,6 +367,7 @@
                 align-items: flex-end;
                 p {
                   background-color:rgb(217, 253, 211);
+                  border: 1px solid rgb(255, 255, 255);
                   color: rgb(0, 0, 0);
                   border-radius: 10px 0px 10px 10px;
                 }

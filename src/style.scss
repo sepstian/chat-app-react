@@ -16,7 +16,7 @@
   
   .formContainer {
     background-color: #bdffa7;
-    height: 97.5vh;
+    height: 97vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,10 +90,16 @@
       }
     }
   }
+
+  .password-eye{
+    position: relative;
+    right: 25px;
+    color: rgb(175, 175, 175);
+  }
   
   .home {
     background-color: #bdffa7;
-    height: 100vh;
+    height: 97vh;
     display: flex;
     align-items: center;
     justify-content: center;

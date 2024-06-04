@@ -120,7 +120,7 @@ const Search = () => {
           console.log(val.displayName);
           return(
             <>
-              <text>{val.displayName}</text>
+              <text key={val.id}>{val.displayName}</text>
             </>
           )
         })}

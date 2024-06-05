@@ -46,7 +46,7 @@ const Login = () => {
             />
           </div>
           <button>Sign in</button>
-          {err && <span>Account can't acces. create account</span>}
+          {err && <span>Account not found!. Create account</span>}
         </form>
         <p>You don't have an account? <Link to="/register">Register</Link></p>
       </div>

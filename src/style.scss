@@ -57,6 +57,7 @@
           width: 14rem;
           margin-left: 15px;
           border-bottom: 1px solid #bcffa7;
+          border-radius: 10px;
           &::placeholder {
             color: rgb(175, 175, 175);
           }
@@ -69,6 +70,7 @@
   
         button {
           background-color: #88ec7b;
+          border-radius: 10px;
           color: white;
           padding: 10px;
           font-weight: bold;

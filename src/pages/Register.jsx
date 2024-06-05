@@ -101,7 +101,7 @@ const Register = () => {
           <text>Must add an avatar. jpg, jpeg, png </text>
           <button disabled={loading}>Sign up</button>
           {loading && "Uploading and compressing the image please wait..."}
-          {err && <span>Something went wrong</span>}
+          {err && <span>Something went wrong. Maybe email is already in use or other</span>}
         </form>
         <p>
           You do have an account? <Link to="/login">Login</Link>

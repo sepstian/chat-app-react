@@ -3,14 +3,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import { db } from "../firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { update_active } from "../redux/slice/activeSlice";
 import { update_arrayMsg } from "../redux/slice/arrayMsgSlice";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
   const dispatchAct = useDispatch()
-
+  const dataMsg= useSelector((state) => {
+    return state.arrayMsgSlice;
+  });
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
@@ -60,7 +62,7 @@ const Chats = () => {
             <span>{chat[1].userInfo.displayName}</span>
             <div className="PesanInfo">
               <p>{chat[1].lastMessage?.text}</p>
-              <p>{convertTime(chat[1].date?.seconds, chat[1].date?.nanoseconds)}</p>
+              <p style={{ display:dataMsg.arrayMsg === false ? "none" : "flex" }}>{convertTime(chat[1].date?.seconds, chat[1].date?.nanoseconds)}</p>
             </div>
           </div>
         </div>

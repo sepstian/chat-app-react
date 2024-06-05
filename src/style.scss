@@ -129,7 +129,7 @@
   
       .sidebar {
         flex: 1;
-        background-color: #397c3b;
+        background-color: #4a8e4c;
         position: relative;
         overflow-y: scroll;
   
@@ -207,7 +207,7 @@
           cursor: pointer;
   
           &:hover {
-            background-color: #2e522d;
+            background-color: #365e35;
           }
   
           img {
@@ -224,7 +224,7 @@
             }
             p {
               font-size: 14px;
-              color: lightgray;
+              color: rgb(216, 229, 214);
             }
           }
         }
@@ -272,7 +272,7 @@
             .messageInfo {
               display: flex;
               flex-direction: column;
-              color: gray;
+              color: rgb(170, 167, 167);
               font-weight: 300;
   
               img {
@@ -458,7 +458,7 @@
     border: none;
     padding: 10px 15px;
     color: rgb(0, 0, 0);
-    background-color: #459b45;
+    background-color: #367b36;
     border-radius: 10px;
     cursor: pointer;
   }

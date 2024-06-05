@@ -21,7 +21,13 @@ const Input = (props) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const afterClick = () => {
+    setText("");
+    setImg(null);
+  }
+
   const handleSend = async () => {
+    afterClick()
     if(text !== ""){
       if (img) {
         const storageRef = ref(storage, uuid());
@@ -70,9 +76,6 @@ const Input = (props) => {
         },
         [data.chatId + ".date"]: serverTimestamp(),
       });
-  
-      setText("");
-      setImg(null);
     }
   };
 

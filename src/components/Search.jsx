@@ -117,7 +117,7 @@ const Search = () => {
       <button className="btnLihatUser" onClick={() => setInList(!inList)}>Lihat User</button>
       <div style={{ display:inList === false ? "none":"flex" }} className="list-user">
         {listUser?.map((val, idx) => {
-          console.log(val.displayName);
+          console.log(val);
           return(
             <>
               <text key={val.id}>{val.displayName}</text>

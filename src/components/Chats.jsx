@@ -14,6 +14,17 @@ const Chats = () => {
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
+  const convertTime = (seconds, nanoseconds) => {
+    const milliseconds = (seconds * 1000) + (nanoseconds / 1000000);
+    const date = new Date(milliseconds);
+    const daysOfWeek = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const dayName = daysOfWeek[date.getDay()];
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const timeString = `${dayName}, ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    return timeString;
+  };
+
   useEffect(() => {
     const getChats = () => {
       const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
@@ -34,18 +45,23 @@ const Chats = () => {
     dispatchAct(update_arrayMsg(true))
   };
 
+  console.log(chats)
+
   return (<>
     <div className="chats">
       {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
         <div
-          className="userChat"
+        className="userChat"
           key={chat[0]}
           onClick={() => handleSelect(chat[1].userInfo)}
         >
           <img src={chat[1].userInfo.photoURL} alt="" />
           <div className="userChatInfo">
             <span>{chat[1].userInfo.displayName}</span>
-            <p>{chat[1].lastMessage?.text}</p>
+            <div className="PesanInfo">
+              <p>{chat[1].lastMessage?.text}</p>
+              <p>{convertTime(chat[1].date?.seconds, chat[1].date?.nanoseconds)}</p>
+            </div>
           </div>
         </div>
       ))}

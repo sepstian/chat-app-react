@@ -6,6 +6,17 @@ const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const convertTime = (seconds, nanoseconds) => {
+    const milliseconds = (seconds * 1000) + (nanoseconds / 1000000);
+    const date = new Date(milliseconds);
+    const daysOfWeek = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const dayName = daysOfWeek[date.getDay()];
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const timeString = `${dayName}, ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    return timeString;
+  };
+
   const ref = useRef();
 
   useEffect(() => {
@@ -26,7 +37,7 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span className="spanMessage">{convertTime(message.date.seconds, message.date.nanoseconds)}</span>
       </div>
       <div className="messageContent">
         <p>{message.text}</p>

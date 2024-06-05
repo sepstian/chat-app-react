@@ -129,14 +129,14 @@
   
       .sidebar {
         flex: 1;
-        background-color: #3c613d;
+        background-color: #397c3b;
         position: relative;
         overflow-y: scroll;
   
         .navbar {
           display: flex;
           align-items: center;
-          background-color: #2e522d;
+          background-color: #256c23;
           height: 50px;
           padding: 10px;
           justify-content: space-between;
@@ -237,7 +237,7 @@
   
         .chatInfo {
           height: 50px;
-          background-color: #5d8d5b;
+          background-color: #28a326;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -486,15 +486,15 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgb(217, 253, 211);
     border-radius: 10px;
   }
 
   *::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #4ec042;
     border-radius: 10px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: rgb(40, 117, 20);
   }

@@ -4,11 +4,14 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from "react-redux";
+import { update_arrayMsg } from "../redux/slice/arrayMsgSlice";
 
 const Login = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch()
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -22,6 +25,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/")
+      dispatch(update_arrayMsg(false))
     } catch (err) {
       setErr(true);
     }

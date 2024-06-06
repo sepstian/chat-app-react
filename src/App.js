@@ -3,13 +3,14 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./style.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "./context/AuthContext";
-import { Provider } from "react-redux";
-import { globalState } from "./redux";
+import { update_arrayMsg } from "./redux/slice/arrayMsgSlice";
+import { useDispatch } from "react-redux";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
+  const dispatch = useDispatch()
 
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
@@ -19,8 +20,11 @@ function App() {
     return children
   };
 
+  useEffect(() => {
+    dispatch(update_arrayMsg(false))
+  }, [])
+
   return (
-  <Provider store={globalState}>
     <BrowserRouter>
       <Routes>
         <Route path="/">
@@ -37,7 +41,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  </Provider>
   );
 }
 

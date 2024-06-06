@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
+import { useSelector } from "react-redux";
 
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
+  const dataMsg= useSelector((state) => {
+    return state.arrayMsgSlice;
+  });
 
   const convertTime = (seconds, nanoseconds) => {
     const milliseconds = (seconds * 1000) + (nanoseconds / 1000000);
@@ -27,6 +31,7 @@ const Message = ({ message }) => {
     <div
       ref={ref}
       className={`message ${message.senderId === currentUser.uid && "owner"}`}
+      style={{ display:dataMsg.arrayMsg === false ? "none" : "" }}
     >
       <div className="messageInfo">
         <img

@@ -26,7 +26,7 @@ const Chat = (props) => {
       <div className="chatInfo">
         <div style={{ display:"flex", alignItems:"center", gap:"10px"}}>
           <FaArrowLeft style={{ display:dataMsg.arrayMsg === false ? "none" : "flex", cursor:"pointer" }} onClick={() => handleOffActive()}/>
-          <span>{data.user?.displayName}</span>
+          <span style={{ display: dataMsg.arrayMsg === false ? "none" : "flex" }}>{data.user?.displayName}</span>
         </div>
         <div className="chatIcons">
           <img src={Cam} alt="" />

@@ -61,6 +61,7 @@ const Chats = () => {
           <div className="userChatInfo">
             <span>{chat[1].userInfo.displayName}</span>
             <div className="PesanInfo">
+              <p style={{ display: !chat[1].lastMessage ? "flex" : "none" }}>Baru ditambahkan.</p>
               <p>{chat[1].lastMessage?.text}</p>
               <p style={{ display: !chat[1].lastMessage ? "none" : "flex" }}>{convertTime(chat[1].date?.seconds, chat[1].date?.nanoseconds)}</p>
             </div>
